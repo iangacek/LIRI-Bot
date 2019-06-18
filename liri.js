@@ -43,7 +43,7 @@ function mySwitch(appCommand) {
             } else {
                 console.log("An error has occurred. Please try again.");
             }
-        });
+        })
     }
 
     // OMDB Search function
