@@ -22,6 +22,9 @@ function mySwitch(appCommand) {
         case "movie-this":
             getMovie();
             break;
+        case "concert-this":
+            getConcert();
+            break;
         // Calls Other Function
         case "do-what-it-says":
             doWhatItSays();
@@ -79,6 +82,26 @@ function mySwitch(appCommand) {
                 console.log(error.config);
             });
     }
+
+    function getConcert() {
+        var artistName = userInput;
+        var queryUrl = "https://rest.bandsintown.com/artists/" + artistName + "/events?app_id=codingbootcamp";
+        axios.get(queryUrl).then(
+            function (response, error) {
+                if (!error) {
+                    for (var i = 0; i < 5; i++) {
+                        console.log("Name of venue: " + response.data[i].venue.name)
+                        console.log("Location: " + response.data[i].lineup);
+                        console.log("Date: " + response.data[i].datetime);
+                        console.log("----------")
+                    }
+                } else {
+                    console.log("An error has occurred. Please try again.");
+
+                }
+            });
+        }
+
 
     function doWhatItSays() {
         fs.readFile("./random.txt", "utf8", function (error, data) {
