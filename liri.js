@@ -41,7 +41,7 @@ function mySwitch(appCommand) {
                     console.log("----------");
                 }
             } else {
-                console.log('An error has occurred. Please try again.');
+                console.log("An error has occurred. Please try again.");
             }
         });
     }
