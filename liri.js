@@ -5,7 +5,6 @@ var axios = require('axios');
 var moment = require('moment');
 var spotify = new spotify(keys.spotify);
 
-
 // Spotify retrieval
 var getSpotify = function(songName) {
     spotify.search({ type: 'track', query: 'dancing in the moonlight' }, function(err, data) {
@@ -13,7 +12,7 @@ var getSpotify = function(songName) {
             console.log('Error occurred: ' + err);
             return;
         }
-        console.log(data);
+        console.log(data.tracks);
     });
 }
 getSpotify();
