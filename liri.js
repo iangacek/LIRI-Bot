@@ -30,21 +30,21 @@ function mySwitch(appCommand) {
 
     // Spotify Search function
     function getSpotify() {
-        spotify.search(
-            {
-                type: "track",
-                query: userInput
-            },
-            function (err, data) {
-                if (err) {
-                    console.log("Error occurred: " + err);
-                    return;
+        spotify.search({ type: 'track', query: userInput, limit: 5 }, function (error, data) {
+            if (!error) {
+                for (var i = 0; i < data.tracks.items.length; i++) {
+                    var songData = data.tracks.items[i];
+                    console.log("Artist: " + songData.artists[0].name);
+                    console.log("Song: " + songData.name);
+                    console.log("Preview URL: " + songData.preview_url);
+                    console.log("Album: " + songData.album.name);
+                    console.log("----------");
                 }
-                console.log(data);
+            } else {
+                console.log('An error has occurred. Please try again.');
             }
-        );
-    };
-
+        });
+    }
 
     // OMDB Search function
     function getMovie() {
