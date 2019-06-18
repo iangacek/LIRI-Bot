@@ -53,14 +53,14 @@ function mySwitch(appCommand) {
         axios.get(queryUrl).then(
             function (response) {
                 console.log("----------");
-                console.log("Movie title: " + response.data.Title);
-                console.log("Year released: " + response.data.Year);
-                console.log("IMDB Rating: " + response.data.imdbRating);
-                console.log("Rotten Tomatoes Rating: " + response.data.tomatoRating);
-                console.log("Countries movie was produced in: " + response.data.Country);
-                console.log("Language: " + response.data.Language);
-                console.log("Movie Plot: " + response.data.Plot);
-                console.log("Actors/Actresses in the movie " + response.data.Title + ": " + response.data.Actors);
+                console.log("Movie title: " + response.data.Title + "\n");
+                console.log("Year released: " + response.data.Year + "\n");
+                console.log("IMDB Rating: " + response.data.imdbRating + "\n");
+                console.log("Rotten Tomatoes Rating: " + response.data.Ratings[1].Value + "\n");
+                console.log("Countries movie was produced in: " + response.data.Country + "\n");
+                console.log("Language: " + response.data.Language + "\n");
+                console.log("Movie Plot: " + response.data.Plot + "\n");
+                console.log("Actors/Actresses in the movie " + response.data.Title + ": " + response.data.Actors + "\n");
                 console.log("----------")
             })
             .catch(function (error) {
