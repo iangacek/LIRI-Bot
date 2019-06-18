@@ -3,6 +3,7 @@ var keys = require("./keys.js");
 var spotify = require('node-spotify-api');
 var axios = require('axios');
 var moment = require('moment');
+var fs = require("fs");
 var spotify = new spotify(keys.spotify);
 
 var inputString = process.argv;
@@ -23,7 +24,7 @@ function mySwitch(appCommand) {
             break;
         // Calls Other Function
         case "do-what-it-says":
-            doWhat();
+            doWhatItSays();
             break;
     }
 
@@ -78,5 +79,13 @@ function mySwitch(appCommand) {
                 console.log(error.config);
             });
     }
+
+    function doWhatItSays() {
+        fs.readFile("./random.txt", "utf8", function (error, data) {
+            if (!error);
+            console.log(data.toString());
+        });
+    }
+
 }
 mySwitch(appCommand);
