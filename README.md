@@ -35,6 +35,18 @@ To perform a search for venues a band is playing at, type the following command:
 
 ## Screenshots
 
+Spotify example:
+
+![Spotify example](https://github.com/iangacek/liri-node-app/blob/master/assets/screenshots/Spotify-example.PNG)
+
+OMDB example:
+
+![OMDB example](https://github.com/iangacek/liri-node-app/blob/master/assets/screenshots/OMDB-example.PNG)
+
+BandsInTown example:
+
+![BandsInTown example](https://github.com/iangacek/liri-node-app/blob/master/assets/screenshots/BandsInTown-example.PNG)
+
 ## Technologies
 
 ## Credits
