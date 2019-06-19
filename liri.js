@@ -32,7 +32,7 @@ function switchCommand(appCommand) {
     }
 
     // Spotify Search function
-    function getSpotify(userInput) {
+    function getSpotify() {
         spotify.search({ type: 'track', query: userInput, limit: 5 }, function (error, data) {
             if (!error) {
                 for (var i = 0; i < data.tracks.items.length; i++) {
@@ -105,9 +105,11 @@ function switchCommand(appCommand) {
 
     // Do-What-It-Says function
     function doWhatItSays() {
-        fs.readFile("./random.txt", "utf8", function (data) {
-            var data = data.split(",");
-            getSpotify(data[1]);
+        fs.readFile('random.txt', "utf8", function (data) {
+            var doing = data.split(',');
+            //PSEUDOCODE -- this should spotify search the second part of random.txt, but 
+            //that would involve me modifying the entire function for getSpotify
+            spotifyThis(doing[1]);
         });
     }
 }
