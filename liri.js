@@ -12,7 +12,7 @@ var appCommand = inputString[2];
 // Choses input
 var userInput = inputString[3];
 
-function mySwitch(appCommand) {
+function switchCommand(appCommand) {
     switch (appCommand) {
         // Calls the Spotify function
         case "spotify-this-song":
@@ -32,7 +32,7 @@ function mySwitch(appCommand) {
     }
 
     // Spotify Search function
-    function getSpotify() {
+    function getSpotify(userInput) {
         spotify.search({ type: 'track', query: userInput, limit: 5 }, function (error, data) {
             if (!error) {
                 for (var i = 0; i < data.tracks.items.length; i++) {
@@ -92,7 +92,7 @@ function mySwitch(appCommand) {
                     for (var i = 0; i < 5; i++) {
                         console.log("Name of venue: " + response.data[i].venue.name)
                         console.log("Location: " + response.data[i].lineup);
-                        console.log("Date: " + response.data[i].datetime);
+                        console.log("Date: " + moment(response.data[i].datetime).format('MM/DD/YYYY'));
                         console.log("----------")
                     }
                 } else {
@@ -105,10 +105,9 @@ function mySwitch(appCommand) {
 
     function doWhatItSays() {
         fs.readFile("./random.txt", "utf8", function (error, data) {
-            if (!error);
-            console.log(data.toString());
+            var data = data.split(",");
+            getSpotify(data[1]);
         });
     }
-
 }
-mySwitch(appCommand);
+switchCommand(appCommand);
