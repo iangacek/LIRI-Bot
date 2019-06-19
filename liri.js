@@ -83,6 +83,7 @@ function switchCommand(appCommand) {
             });
     }
 
+    // BandsInTown function
     function getConcert() {
         var artistName = userInput;
         var queryUrl = "https://rest.bandsintown.com/artists/" + artistName + "/events?app_id=codingbootcamp";
@@ -100,11 +101,11 @@ function switchCommand(appCommand) {
 
                 }
             });
-        }
+    }
 
-
+    // Do-What-It-Says function
     function doWhatItSays() {
-        fs.readFile("./random.txt", "utf8", function (error, data) {
+        fs.readFile("./random.txt", "utf8", function (data) {
             var data = data.split(",");
             getSpotify(data[1]);
         });
