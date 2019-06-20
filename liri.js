@@ -4,7 +4,7 @@ var spotify = require('node-spotify-api');
 var axios = require('axios');
 var moment = require('moment');
 var fs = require("fs");
-var spotify = new spotify(keys.spotify);
+var spotify = new Spotify(keys.spotify);
 
 var inputString = process.argv;
 // Choses app
@@ -33,7 +33,7 @@ function switchCommand(appCommand) {
 
     // Spotify Search function
     function getSpotify() {
-        spotify.search({ type: 'track', query: userInput, limit: 5 }, function (error, data) {
+        Spotify.search({ type: 'track', query: userInput, limit: 5 }, function (error, data) {
             if (!error) {
                 for (var i = 0; i < data.tracks.items.length; i++) {
                     var songData = data.tracks.items[i];
