@@ -47,7 +47,27 @@ BandsInTown example:
 
 ![BandsInTown example](https://github.com/iangacek/liri-node-app/blob/master/assets/screenshots/BandsInTown-example.PNG)
 
-## Technologies
+## Technologies included in this application: 
+
+`node-spotify-api`:
+![node-spotify-api](https://www.npmjs.com/package/node-spotify-api)
+
+`axios`:
+![axios](https://www.npmjs.com/package/axios)
+
+`OMDB API`:
+![OMDB](http://www.omdbapi.com/)
+
+`BandsInTown API`:
+![BIT API](http://www.artists.bandsintown.com/bandsintown-api)
+
+`moment`:
+![moment](https://www.npmjs.com/package/moment)
+
+`file system`:
+`[fs](https://www.npmjs.com/package/file-system)
+
+
 
 ## Credits
 
